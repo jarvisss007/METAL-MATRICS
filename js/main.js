@@ -115,7 +115,7 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ================= SYSTEMS ================= */
 const SYSTEMS = [
   {
-    id: 'cs', code: 'CS', name: 'Calcium Sulphate', short: 'Dense, precise, fire-proof',
+    id: 'cs', page: 'calcium-sulphate.html', code: 'CS', name: 'Calcium Sulphate', short: 'Dense, precise, fire-proof',
     title: 'Calcium Sulphate Panel Series',
     body: 'High-density calcium sulphate encased in hot-dip galvanised formed steel sheet. Top and bottom sheets are locked together through profiled edges, so the mineral core takes impact and the steel takes the bending. Dimensionally precise, shock-proof and quick to assemble.',
     img: 'cs-panel', cap: 'CS panel on corner pedestals',
@@ -127,7 +127,7 @@ const SYSTEMS = [
     ]
   },
   {
-    id: 'fs', code: 'FS', name: 'Steel Cementitious', short: 'The data-centre workhorse',
+    id: 'fs', page: 'steel-cementitious.html', code: 'FS', name: 'Steel Cementitious', short: 'The data-centre workhorse',
     title: 'Steel Cementitious Panel',
     body: 'A welded steel shell infilled with lightweight cement and finished in epoxy paint. The screw-down design makes a stable, quiet structure that installs fast — and the cement fill keeps it non-combustible. Six grades cover everything from open offices to heavy equipment halls.',
     img: 'steel-hpl', cap: 'FS panels with HPL finish',
@@ -140,7 +140,7 @@ const SYSTEMS = [
     ]
   },
   {
-    id: 'wc', code: 'WC', name: 'Woodcore', short: 'Quiet, warm, economical',
+    id: 'wc', page: 'woodcore.html', code: 'WC', name: 'Woodcore', short: 'Quiet, warm, economical',
     title: 'Woodcore Anti-Static Panel',
     body: 'High-density composite wood core encapsulated in steel sheet. The timber core gives the best acoustic performance in the range and a solid feel underfoot — a durable, reliable and environmentally friendly floor for offices and control rooms.',
     img: 'woodcore-pvc', cap: 'Woodcore PVC panel on pedestal',
@@ -152,7 +152,7 @@ const SYSTEMS = [
     ]
   },
   {
-    id: 'al', code: 'AL', name: 'Aluminium', short: 'Light, clean, recyclable',
+    id: 'al', page: 'aluminium.html', code: 'AL', name: 'Aluminium', short: 'Light, clean, recyclable',
     title: 'Aluminium Access Floor',
     body: 'Panels die-cast from aluminium ingot: lightweight, non-corrosive and sturdy, with good electrical and thermal conductivity. Economical over its life and fully recyclable at the end of it — the floor of choice for clean and mission-critical rooms.',
     img: 'aluminium', cap: 'Solid and perforated aluminium panels',
@@ -175,7 +175,8 @@ const SYSTEMS = [
     panel.innerHTML = `
       <div class="sp__top">
         <div><h3>${s.title}</h3><p>${s.body}</p>
-          <ul class="props">${s.props.map(p => `<li>${p}</li>`).join('')}</ul></div>
+          <ul class="props">${s.props.map(p => `<li>${p}</li>`).join('')}</ul>
+          <a class="more" href="${s.page}">Full specification <span aria-hidden="true">→</span></a></div>
         <div class="sp__img" data-cap="${s.cap}"><img src="assets/img/${s.img}.jpg" alt="${s.cap}"></div>
       </div>
       <div class="vars">${s.vars.map(v => `

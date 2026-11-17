@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jarvisss007.github.io/METAL-MATRICS/sitemap.xml
